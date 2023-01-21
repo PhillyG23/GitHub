@@ -1,0 +1,31 @@
+import org.apache.poi.xssf.usermodel.*;
+import java.io.*;
+
+public class SpreadsheetWriter {
+    public static void main(String[] args) {
+        String extractedText = extractTextFromImage(); // call the function that extract the text
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Text");
+        XSSFRow row = sheet.createRow(0);
+        XSSFCell cell = row.createCell(0);
+        cell.setCellValue(extractedText);
+        try {
+            FileOutputStream outputStream = new FileOutputStream("text.xlsx");
+            workbook.write(outputStream);
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+This code creates a new workbook and sheet, then creates a new row and cell, and sets the value of the cell to the extracted text. Finally, it writes the workbook to a file called "text.xlsx".
+
+You can use other libraries like JExcel, JXL, etc. It depends on the requirements and your preferred library.
+
+Please keep in mind that, the format of the spreadsheet (xls, xlsx, csv, etc) also depends on the requirements and the data size.
+
+
+
+
+
+
