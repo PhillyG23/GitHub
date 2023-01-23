@@ -1,0 +1,24 @@
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+header{
+
+    @include flexCenter();
+
+    background: rgb(175, 198, 206);
+    button{
+        background: $primaryBtn;
+        &::after{
+        
+            content: "eat my ass";
+        }
+    }
+    p{
+        font: 900;
+    }
+}
