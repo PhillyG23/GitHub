@@ -1,0 +1,40 @@
+
+#columnsContainer {
+  display: flex;
+
+  justify-content: space-around;
+
+
+   
+}
+#column1, #column2, #column3 {
+  
+  display: flex;
+  position: relative;
+  flex-grow: calc(1,1,1);
+
+
+}
+#column1 video, #column2 video, #column3 video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+video{
+    flex: auto;
+    justify-content: center;
+}
+
+
+button {
+font-size: large;
+position: absolute;
+top: 90%;
+left: 25%;
+}
+
