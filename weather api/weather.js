@@ -21,3 +21,13 @@ form.addEventListener("submit", async (event) => {
     console.error(error);
   }
 });
+
+document.getElementById("submit-button").addEventListener("click", function() {
+    var answer = document.getElementById("answer").value;
+    if (answer == 4) {
+      document.getElementById("action-button").disabled = false;
+    } else {
+      alert("Incorrect answer, try again.");
+      document.getElementById("answer").value = "";
+    }
+  });
