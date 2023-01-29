@@ -2,23 +2,21 @@
 <html>
   <head>
     <title>Weather</title>
-    <script src="weather.js" defer></script>
- </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
   <body>
     <h1>Weather</h1>
     <form>
       <label for="city">Enter a city:</label>
-      <button id="submit-button">Submit</button>
       <input type="text" id="city" name="city">
-      <div id="puzzle">Solve the puzzle to unlock the button: 2 + 2 = ?</div>
-      <input type="text" id="answer">
-      <button id="submit-button">Submit</button>
-      <button id="submit-button" style="display:none;">Submit</button>
-    
-      
+      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+      <button type="submit" id="submit-button">Submit</button>
     </form>
     <h2>Weather in <span id="city-name"></span></h2>
     <p>Temperature: <span id="temperature"></span></p>
     <p>Conditions: <span id="conditions"></span></p>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
