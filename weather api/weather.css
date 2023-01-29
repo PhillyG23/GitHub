@@ -21,3 +21,8 @@ button {
   border: none;
   cursor: pointer;
 }
+
+#action-button {
+    display: none;
+  }
+  
