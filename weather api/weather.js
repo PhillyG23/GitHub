@@ -24,8 +24,10 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-grecaptcha.ready(function() {
-  grecaptcha.execute("YOUR_SITE_KEY", {action: "submit"}).then(function(token) {
-    submitButton.style.display = "block";
-  });
-});
+
+
+// grecaptcha.ready(function() {
+ // grecaptcha.execute("YOUR_SITE_KEY", {action: "submit"}).then(function(token) {
+  //  submitButton.style.display = "block";
+ // });
+//});
