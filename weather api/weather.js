@@ -24,8 +24,6 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
- grecaptcha.ready(function() {
- grecaptcha.execute("6Le8TDgkAAAAACM0vnUcdcpjIZbvjPwgKLqor7mO", {action: "submit"}).then(function(token) {
-  submitButton.style.display = "block";
- });
-});
+function onSubmit(token) {
+  document.getElementById("form").submit();
+}

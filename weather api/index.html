@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="weather.css">
+  </head>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le8TDgkAAAAACM0vnUcdcpjIZbvjPwgKLqor7mO"></script>
+  <body>
+    <h1>Today's Weather</h1>
+    <form>
+      <label for="city">Enter a city:</label>
+      <input type="text" id="city" name="city">
+      <div class="g-recaptcha" data-sitekey="6Le8TDgkAAAAACM0vnUcdcpjIZbvjPwgKLqor7mO"></div>
+      <button class="g-recaptcha"
+      data-sitekey="6Le8TDgkAAAAACM0vnUcdcpjIZbvjPwgKLqor7mO"
+      data-callback='onSubmit'
+      data-action='submit'>Submit</button>
+
+      
+    </form>
+    <h2>Weather in <span id="city-name"></span></h2>
+    <p>Temperature: <span id="temperature"></span></p>
+    <p>Conditions: <span id="conditions"></span></p>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>

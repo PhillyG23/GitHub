@@ -1,5 +1,5 @@
-var urls = ["https://www.google.com", "https://www.facebook.com", "https://www.twitter.com"];
-var urls2 = ["https://www.google.com", "https://www.facebook.com", "https://www.twitter.com"];
+var urls = ["https://www.google.com", "https://www.google.com", "https://www.google.com"];
+var urls2 = ["https://www.facebook.com", "https://www.facebook.com", "https://www.twitter.com"];
 var urls3 = ["https://www.google.com", "https://www.facebook.com", "https://www.twitter.com"]; //change webites.
 
 
@@ -9,7 +9,7 @@ button.addEventListener("click", myFunction);
 
 function myFunction() {
     for(var i=0; i<urls.length; i++){
-        window.open(urls[i], "_blank");
+        window.open(urls[i], "noopener, noreferrer");
       }
 }
 
