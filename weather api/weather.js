@@ -24,10 +24,8 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-
-
-// grecaptcha.ready(function() {
- // grecaptcha.execute("YOUR_SITE_KEY", {action: "submit"}).then(function(token) {
-  //  submitButton.style.display = "block";
- // });
-//});
+ grecaptcha.ready(function() {
+ grecaptcha.execute("6Le8TDgkAAAAACM0vnUcdcpjIZbvjPwgKLqor7mO", {action: "submit"}).then(function(token) {
+  submitButton.style.display = "block";
+ });
+});
