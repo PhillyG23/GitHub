@@ -1,0 +1,25 @@
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  .square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .square:nth-child(3n) {
+    border-right: none;
+  }
+  .square:nth-last-child(-n + 3) {
+    border-bottom: none;
+  }
+  
