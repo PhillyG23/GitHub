@@ -1,20 +1,34 @@
-h2 {
-    text-align: center;
-    margin-top: 50px;
-  }
-  .container {
+#container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    margin-top: 50px;
+    align-items: center;
   }
-  label, input, button {
-    font-size: 20px;
+  
+  #queue {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 150px;
+  }
+  
+  input[type="text"],
+  button {
+    font-size: 16px;
+    padding: 10px;
     margin: 10px;
   }
-  #output {
-    font-size: 20px;
-    margin-top: 50px;
+  
+  button {
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: skyblue;
   }
   
