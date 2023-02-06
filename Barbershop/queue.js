@@ -1,70 +1,64 @@
 class Queue {
-    constructor() {
-      this.items = [];
+    constructor(barberName) {
+      this.barberName = barberName;
+      this.queue = [];
     }
   
-    enqueue(element) {
-      this.items.push(element);
+    enqueue(customer) {
+      this.queue.push(customer);
     }
   
     dequeue() {
-      if (this.isEmpty())
-        return "Underflow";
-      return this.items.shift();
+      return this.queue.shift();
     }
   
-    front() {
-      if (this.isEmpty())
-        return "No elements in Queue";
-      return this.items.length[0];
-    }
-  
-    isEmpty() {
-      return this.items.length == 0;
-    }
-  
-    printQueue() {
-      let str = "";
-      for (let i = 0; i < this.items.length; i++)
-        str += this.items[i] + " ";
-      return str;
+    getQueue() {
+      return this.queue;
     }
   }
   
-  const queuePhilip = new Queue();
-  const queueLe = new Queue();
-  const queueAnh = new Queue();
+  const philip = new Queue("Philip");
+  const le = new Queue("Le");
+  const anh = new Queue("Anh");
   
-  document.getElementById("enqueue-philip").addEventListener("click", function() {
-    queuePhilip.enqueue(document.getElementById("input-philip").value);
-    document.getElementById("output-philip").innerHTML = "Queue Philip: " + queuePhilip.printQueue();
-    document.getElementById("input-philip").value = "";
+  const allQueues = [philip, le, anh];
+  
+  document.getElementById("add").addEventListener("click", function() {
+    const customer = document.getElementById("input").value;
+    const selectedBarber = document.querySelector('input[name="barber"]:checked').value;
+  
+    allQueues.forEach((queue) => {
+      if (queue.barberName === selectedBarber) {
+        queue.enqueue(customer);
+      }
+    });
+  
+    displayQueues();
+    document.getElementById("input").value = "";
   });
   
-  document.getElementById("dequeue-philip").addEventListener("click", function() {
-    queuePhilip.dequeue();
-    document.getElementById("output-philip").innerHTML = "Queue Philip: " + queuePhilip.printQueue();
+  document.getElementById("remove").addEventListener("click", function() {
+    const selectedBarber = document.querySelector('input[name="barber"]:checked').value;
+  
+    allQueues.forEach((queue) => {
+      if (queue.barberName === selectedBarber) {
+        queue.dequeue();
+      }
+    });
+  
+    displayQueues();
   });
   
-  document.getElementById("enqueue-le").addEventListener("click", function() {
-    queueLe.enqueue(document.getElementById("input-le").value);
-    document.getElementById("output-le").innerHTML = "Queue Le: " + queueLe.printQueue();
-    document.getElementById("input-le").value = "";
-  });
-  
-  document.getElementById("dequeue-le").addEventListener("click", function() {
-    queueLe.dequeue();
-    document.getElementById("output-le").innerHTML = "Queue Le: " + queueLe.printQueue();
-  });
-  
-  document.getElementById("enqueue-anh").addEventListener("click", function() {
-    queueAnh.enqueue(document.getElementById("input-anh").value);
-    document.getElementById("output-anh").innerHTML = "Queue Anh: " + queueAnh.printQueue();
-    document.getElementById("input-anh").value = "";
-  });
-  
-  document.getElementById("dequeue-anh").addEventListener("click", function() {
-    queueAnh.dequeue();
-    document.getElementById("output-anh").innerHTML = "Queue Anh: " + queueAnh.printQueue();
-  });
+  function displayQueues() {
+    let output = "";
+    allQueues.forEach((queue) => {
+      output += `<h2>${queue.barberName}</h2>`;
+      output += `<ul>`;
+      queue.getQueue().forEach((customer) => {
+        output += `<li>${customer}</li>`;
+      });
+      output += `</ul>`;
+    });
+    document.getElementById("output").innerHTML = output;
+  }
   
