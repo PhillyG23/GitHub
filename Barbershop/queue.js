@@ -16,7 +16,7 @@ class Queue {
     front() {
       if (this.isEmpty())
         return "No elements in Queue";
-      return this.items[0];
+      return this.items.length[0];
     }
   
     isEmpty() {
@@ -31,16 +31,40 @@ class Queue {
     }
   }
   
-  const queue = new Queue();
+  const queuePhilip = new Queue();
+  const queueLe = new Queue();
+  const queueAnh = new Queue();
   
-  document.getElementById("enqueue").addEventListener("click", function() {
-    queue.enqueue(document.getElementById("input").value);
-    document.getElementById("output").innerHTML = "Queue: " + queue.printQueue();
-    document.getElementById("input").value = "";
+  document.getElementById("enqueue-philip").addEventListener("click", function() {
+    queuePhilip.enqueue(document.getElementById("input-philip").value);
+    document.getElementById("output-philip").innerHTML = "Queue Philip: " + queuePhilip.printQueue();
+    document.getElementById("input-philip").value = "";
   });
   
-  document.getElementById("dequeue").addEventListener("click", function() {
-    queue.dequeue();
-    document.getElementById("output").innerHTML = "Queue: " + queue.printQueue();
+  document.getElementById("dequeue-philip").addEventListener("click", function() {
+    queuePhilip.dequeue();
+    document.getElementById("output-philip").innerHTML = "Queue Philip: " + queuePhilip.printQueue();
+  });
+  
+  document.getElementById("enqueue-le").addEventListener("click", function() {
+    queueLe.enqueue(document.getElementById("input-le").value);
+    document.getElementById("output-le").innerHTML = "Queue Le: " + queueLe.printQueue();
+    document.getElementById("input-le").value = "";
+  });
+  
+  document.getElementById("dequeue-le").addEventListener("click", function() {
+    queueLe.dequeue();
+    document.getElementById("output-le").innerHTML = "Queue Le: " + queueLe.printQueue();
+  });
+  
+  document.getElementById("enqueue-anh").addEventListener("click", function() {
+    queueAnh.enqueue(document.getElementById("input-anh").value);
+    document.getElementById("output-anh").innerHTML = "Queue Anh: " + queueAnh.printQueue();
+    document.getElementById("input-anh").value = "";
+  });
+  
+  document.getElementById("dequeue-anh").addEventListener("click", function() {
+    queueAnh.dequeue();
+    document.getElementById("output-anh").innerHTML = "Queue Anh: " + queueAnh.printQueue();
   });
   
