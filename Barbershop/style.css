@@ -1,65 +1,91 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .queue-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  background-color: white;
+  margin: 20px 0;
+}
+
+.barber-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  width: 250px;
+  border: 1px solid lightgray;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px gray;
   padding: 20px;
-  margin-bottom: 20px;
 }
 
 .barber-header {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: royalblue;
   margin-bottom: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.queue {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.queue-item {
-  font-size: 18px;
-  color: #333;
+
+
+.queue-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   margin: 10px 0;
 }
 
-.input {
-  padding: 10px;
-  font-size: 16px;
+.queue-person {
+  font-size: 24px;
+  color: darkslategray;
   border: 1px solid lightgray;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.button {
-  background-color: royalblue;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .clear-button {
+  background-color: lightcoral;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.enqueue-button {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dequeue-button {
   background-color: tomato;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#input1 {
+  background-color: lightblue;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#input2 {
+  background-color: lightgreen;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#input3 {
+  background-color: lightpink;
+  font-size: 20px;
+  padding: 10px;
 }
