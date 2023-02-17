@@ -14,6 +14,8 @@ const db = mysql.createConnection({
 //ALTER USER 'root'@'localhost' IDENTIFIED BY 'your new password'; 
 //enter the query execution cmd
 
+app.use(express.json())
+
 
 
 app.get("/", (req,res)=>{
@@ -38,9 +40,10 @@ app.get("/books", (req, res) => {
     // the freaking "quotes" are actually backticks for the columns. bruh
     const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
     const values = [
-      "title from backend",
-      "desc from backend",
-      "cover pic from backend"];
+      req.body.title,
+      req.body.desc,
+      req.body.cover,
+    ];
   
     db.query(q, [values], (err,data) => {
       if (err)  return res.json(err);
