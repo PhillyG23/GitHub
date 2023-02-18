@@ -41,10 +41,11 @@ app.get("/books", (req, res) => {
 
   app.post("/books", (req, res) => {
     // the freaking "quotes" are actually backticks for the columns. bruh
-    const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
+    const q = "INSERT INTO books (`title`, `desc`,`price`, `cover`) VALUES (?)";
     const values = [
       req.body.title,
       req.body.desc,
+      req.body.price,
       req.body.cover,
     ];
   
@@ -53,6 +54,17 @@ app.get("/books", (req, res) => {
       return res.json("Book has been created successfully.");
     });
   });
+  
+  app.delete("/book/:id", (req,res) =>{
+    const bookId = req.params.id
+    const q = "DELETE FROM books WHERE id = ?"
+
+    db.query(q,[bookId], (err,data)=>{
+      if (err)  return res.json(err);
+      return res.json("Book has been deleted sucessfully.");
+
+    })
+  })
   
 
 

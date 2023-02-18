@@ -3,7 +3,6 @@ import axios from 'axios'; // import axios to make HTTP requests
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Books = () => {
   const [books, setBooks] = useState([]);
 
@@ -21,6 +20,15 @@ const Books = () => {
     fetchAllBooks(); // Call the function to fetch books
   }, []); // useEffect runs only once because of the empty dependency array
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete("http://localhost:8800/books/" + id)
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <h1>Phill's books</h1>
@@ -32,10 +40,14 @@ const Books = () => {
             <h2>{book.title}</h2>
             <p>{book.desc}</p>
             <span>{book.price}</span>
+            <button className="delete" onClick={() => handleDelete(book.id)}>Delete</button>
+            <button className="update">Update</button>
           </div>
         ))}
       </div>
-      <button><Link to="/add">Add new book </Link></button>
+      <button>
+        <Link to="/add">Add new book</Link>
+      </button>
     </div>
   );
 };
