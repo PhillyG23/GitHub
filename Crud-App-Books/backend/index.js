@@ -1,7 +1,9 @@
-import express from "express"
-import mysql from "mysql"
+import express from "express";
+import mysql from "mysql";
+import cors from "cors";
 
 const app = express();
+
 
 const db = mysql.createConnection({
     host:"localhost",
@@ -15,6 +17,7 @@ const db = mysql.createConnection({
 //enter the query execution cmd
 
 app.use(express.json())
+app.use(cors())
 
 
 
